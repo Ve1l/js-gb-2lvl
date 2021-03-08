@@ -19,6 +19,13 @@ class productsList {
       block.insertAdjacentHTML('beforeend', productObj.render())
     }
   }
+  getSum() {
+    let sum = 0
+    for (let product of this.goods) {
+      sum += product.price
+    }
+    alert(sum)
+  }
 }
 class ProductItem {
   constructor(product) {
@@ -39,3 +46,14 @@ class ProductItem {
 
 let list = new productsList()
 list.render()
+list.getSum()
+
+class Basket {
+  addGoods() {}
+  removeGoods() {}
+  changeGoods() {}
+  render() {}
+}
+class itemBasket {
+  render() {}
+}
