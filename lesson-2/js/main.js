@@ -20,11 +20,8 @@ class productsList {
     }
   }
   getSum() {
-    let sum = 0
-    for (let product of this.goods) {
-      sum += product.price
-    }
-    alert(sum)
+    let result = this.goods.reduce((sum, item) => (sum += item.price), 0)
+    alert(result)
   }
 }
 class ProductItem {
