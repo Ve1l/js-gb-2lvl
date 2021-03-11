@@ -48,7 +48,7 @@ class Item {
     return `<div class="product-item" data-id="${this.id_product}">
     <img class="products-img" src="${this.img}" alt="Some img">
     <h3 class="text-h3">${this.product_name}</h3>
-    <p class="price">${this.price}</p>
+    <p class="price">${this.price} руб.</p>
     <button class="buy-btn" data-id="${this.id_product}"
     data-name="${this.product_name}"
     data-price="${this.price}">Купить</button>
@@ -130,9 +130,9 @@ class Cart extends List {
     block.querySelector(
       '.product-quantity'
     ).textContent = `количество: ${product.quantity}`
-    block.querySelector('.product-price').textContent = `$${
+    block.querySelector('.product-price').textContent = `${
       product.quantity * product.price
-    }`
+    } руб.`
   }
   _init() {
     document.querySelector('.btn-cart').addEventListener('click', () => {
@@ -162,7 +162,7 @@ class CartItem extends Item {
       </div>
       </div>
       <div class="right-block">
-          <p class="product-price">${this.quantity * this.price}</p>
+          <p class="product-price">${this.quantity * this.price} руб.</p>
           <button class="del-btn" data-id="${this.id_product}">&#8212</button>
       </div>
       </div>`
