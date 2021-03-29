@@ -50,7 +50,7 @@ Vue.component('cart', {
 <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
       <div class="cart-block" v-show="showCart">
           <p v-if="!cartItems.length">Корзина пуста</p>
-          <cart-item v-for="item of cartItems" :key="item.id_product" :img="imgCart" :cart-item="item" @remove="remove">
+          <cart-item v-for="item of cartItems" :key="item.id_product" :img="item.img" :cart-item="item" @remove="remove">
           </cart-item>
       </div>
       </div>
@@ -58,11 +58,11 @@ Vue.component('cart', {
 })
 
 Vue.component('cart-item', {
-  props: ['img', 'cartItem'],
+  props: ['img', 'cartItem', 'cart-item'],
   template: `
   <div class="cart-item">
                   <div class="product-bio">
-                      <img :src="img" alt="Some img">
+                      <img :src="item.img" alt="Some img">
                       <div class="product-desc">
                           <div class="product-title">{{ cartItem.product_name }}</div>
                           <div class="product-quantity">Quantity: {{ cartItem.quantity }}</div>
